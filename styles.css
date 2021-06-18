@@ -1,0 +1,270 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'IBM Plex Mono', monospace;
+    color: #060A24;
+}
+
+
+.flex{display: flex;}
+.align-center{align-items: center;}
+.justify-left{justify-content:left;}
+.justify-center{justify-content: center;}
+.justify-right{justify-content: right;}
+.space-between{justify-content: space-between;}
+.column{flex-direction: column;}
+
+
+/** button **/
+
+button{
+    background-color: #00F3BB;
+    width: 100%;
+    height: 56px;
+    font-family: 'IBM Plex Mono';
+    font-size: 18px;
+    color: #060A24;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 30px 0;
+    border: none;
+}
+button:hover{
+   /*background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);*/
+   color:#fff;
+    background: linear-gradient(65deg, #00F0B8, #0000FE);
+    -webkit-animation: button-hover 2s ease infinite;
+    -moz-animation: button-hover 2s ease infinite;
+    -o-animation: button-hover 2s ease infinite;
+    animation: button-hover 2s ease infinite;
+}
+
+
+
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+.mobile{
+    height: 44px;
+    padding: 10px 16px;
+}
+nav.mobile div{
+    width: 30px;
+}
+h1,h2{
+    font-size: 36px;
+    line-height: 42px;
+    margin: 20px 0;
+}
+h1,h2,h3{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+}
+header h1::after { /* punto azul*/
+    content: attr(data-end) ;
+    color: #0000FF ;
+}
+header,
+nav,
+.nosotros,
+.temas,
+.novedades,
+main .episodios,
+.galeria h2{
+    padding: 16px;
+}
+main .episodios iframe{
+    margin: 5px 0;
+    max-width: 594px;
+}
+.nosotros > div{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+}
+.nosotros p{margin-bottom: 10px;}
+.nosotros img{width: 300px;}
+
+.novedades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.novedades > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+header p{
+    margin-top: 25px;
+}
+.tachado{text-decoration:line-through;}
+.blue{color: #0000FF;}
+.white{color: #fff;}
+.bg-blue{background-color: #0000FF;}
+
+.temas div{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+    justify-content: center;
+    align-items: center;
+}
+.temas div img{
+    width: 104px;
+}
+.temas div h3{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+.galeria div img{
+    width: 100%;
+    margin:0;
+    padding: 0;
+}
+.galeria div {
+    display: flex;
+    flex-direction: column;
+}
+
+.burger-menu{
+    display: flex;
+    justify-content: flex-end;    
+}
+footer .big h2{
+    width: 200px;
+    text-align: center;
+    line-height: 42px;
+}
+footer .barra{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px 0 20px 0;
+}
+footer .barra .redes{
+    padding: 20px 0;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    padding: 16px;
+}
+footer .barra .redes a{
+    font-size: 20px;
+    color: #060A24;
+
+}
+
+/** DESKTOP **/
+
+
+@media screen and (min-width: 680px) {
+     /* body{background-color: yellowgreen;} 
+   header, main, footer{
+        padding:100px;
+    }*/
+    h1{font-size: 64px;}
+    button{
+        width: 226px;
+        padding: 16px;
+    }
+    .episodios iframe{
+        width: 49%;
+    }
+    .nosotros{
+        display: flex;
+        justify-content: center;
+    }
+    .nosotros > div{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .temas > div,
+    .galeria div{
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .temas > div div{
+        width: 25%;
+        justify-content: center;
+        text-align: center;
+        min-width: 200px;
+    }
+
+    .galeria div img{
+        width: 33.3%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .novedades .big h2{
+        width: 80%;
+    }
+    .novedades button{
+        width: 345px;
+    }
+
+    footer .barra{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px;
+    }
+    header,
+    nav,
+    .nosotros,
+    .temas,
+    .novedades,
+    .galeria h2,
+    footer .barra{
+        padding: 16px 10%;
+    }
+    main .episodios{
+        padding: 16px 100px;
+    }
+    main .episodios h2{
+        padding: 0 50px;
+    }
+
+}
+/* 
+@media screen and (min-width: 680px) {
+    body{background-color:darkorange}
+} 
+
+@media only screen and (min-width: 599px) and (max-width: 700px) {
+    #homero-2 {
+      visibility: visible;
+    }
+  }
+  @media only screen and (min-width: 499px) and (max-width: 600px) {
+    #homero-3 {
+      visibility: visible;
+    }
+  }
+  @media only screen and (min-width: 399px) and (max-width: 500px) {
+    #homero-4 {
+      visibility: visible;
+    }
+  }
+  @media only screen and (min-width: 1px) and (max-width: 400px) {
+    #homero-5 {
+      visibility: visible;
+    }
+  } */
