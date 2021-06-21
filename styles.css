@@ -4,7 +4,6 @@
     padding: 0;
 }
 body{
-    background-color: darkorange;
     font-family: 'IBM Plex Mono', monospace;
     color: #060A24;
 }
@@ -84,6 +83,52 @@ main .episodios iframe{
     margin: 5px 0;
     max-width: 594px;
 }
+main .episodios{
+    position: relative;
+    margin-top: 30px;
+}
+main .episodios .bg-blue{
+      /* Absolute position */
+      left: 0px;
+      position: absolute;
+      top: -30px;
+      padding-top: 50px;
+  
+      /* Take full size */
+      height: 130%;
+      width: 100%;
+  
+      /* Create diagonal sides */
+      transform: skewY(-7deg);
+  
+      /* Background color */
+      background-color: #0000FF;
+  
+      /* Displayed under the main content */
+      z-index: -1;
+}
+.novedades .bg-blue{
+
+          /* Absolute position */
+          left: 0px;
+          position: absolute;
+          top: 100px;
+          padding-top: 50px;
+      
+          /* Take full size */
+          height: 140%;
+          width: 100%;
+      
+          /* Create diagonal sides */
+          transform: skewY(-7deg);
+      
+          /* Background color */
+          background-color: #0000FF;
+      
+          /* Displayed under the main content */
+          z-index: -1;
+}
+
 .nosotros > div{
     display: flex;
     flex-direction: column;
@@ -100,6 +145,7 @@ main .episodios iframe{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 .novedades > div {
     display: flex;
@@ -108,6 +154,12 @@ main .episodios iframe{
     text-align: center;
     align-items: center;
 }
+
+
+.novedades .big{
+    padding-top: 100px;
+}
+
 header p{
     margin-top: 25px;
 }
@@ -145,6 +197,9 @@ header p{
     display: flex;
     justify-content: flex-end;    
 }
+footer{
+    overflow: hidden;
+}
 footer .big h2{
     width: 200px;
     text-align: center;
@@ -176,8 +231,8 @@ footer .barra .redes a{
 
 
 @media screen and (min-width: 680px) {
-     /* body{background-color: yellowgreen;} 
-   header, main, footer{
+      body{background-color: yellowgreen;} 
+  /* header, main, footer{
         padding:100px;
     }*/
     h1{font-size: 64px;}
@@ -217,11 +272,14 @@ footer .barra .redes a{
     
     .novedades .big h2{
         width: 80%;
+        margin-top: 60px;
     }
     .novedades button{
         width: 345px;
     }
-
+    footer{
+        height: 450px;
+    }
     footer .barra{
         flex-direction: row;
         justify-content: space-between;
