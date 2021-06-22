@@ -33,30 +33,12 @@ button{
     border: none;
 }
 button:hover{
-   /*background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);*/
-   color:#fff;
+    /*background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);*/
+    color:#fff;
     background: linear-gradient(65deg, #00F0B8, #0000FE);
-    -webkit-animation: button-hover 2s ease infinite;
-    -moz-animation: button-hover 2s ease infinite;
-    -o-animation: button-hover 2s ease infinite;
-    animation: button-hover 2s ease infinite;
 }
 
 
-
-
-
-nav{
-    display: flex;
-    justify-content: space-between;
-}
-.mobile{
-    height: 44px;
-    padding: 10px 16px;
-}
-nav.mobile div{
-    width: 30px;
-}
 h1,h2{
     font-size: 36px;
     line-height: 42px;
@@ -66,12 +48,11 @@ h1,h2,h3{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
 }
-header h1::after { /* punto azul*/
+section.header h1::after { /* punto azul*/
     content: attr(data-end) ;
     color: #0000FF ;
 }
-header,
-nav,
+section.header,
 .nosotros,
 .temas,
 .novedades,
@@ -160,7 +141,7 @@ main .episodios .bg-blue{
     padding-top: 100px;
 }
 
-header p{
+section.header p{
     margin-top: 25px;
 }
 .tachado{text-decoration:line-through;}
@@ -171,7 +152,7 @@ header p{
 .temas div{
     display: flex;
     flex-direction: column;
-    margin: 40px 0;
+    margin-top: 40px;
     justify-content: center;
     align-items: center;
 }
@@ -227,14 +208,148 @@ footer .barra .redes a{
 
 }
 
-/** DESKTOP **/
-
-
+/* 
 @media screen and (min-width: 680px) {
-      body{background-color: yellowgreen;} 
-  /* header, main, footer{
-        padding:100px;
-    }*/
+    body{background-color:darkorange}
+} 
+
+@media only screen and (min-width: 599px) and (max-width: 700px) {
+    #homero-2 {
+      visibility: visible;
+    }
+  }
+  @media only screen and (min-width: 499px) and (max-width: 600px) {
+    #homero-3 {
+      visibility: visible;
+    }
+  }
+  @media only screen and (min-width: 399px) and (max-width: 500px) {
+    #homero-4 {
+      visibility: visible;
+    }
+  }
+  @media only screen and (min-width: 1px) and (max-width: 400px) {
+    #homero-5 {
+      visibility: visible;
+    }
+  } */
+
+
+
+
+
+
+
+/* Mobile menu */
+.desktop-menu{display: none;}
+#hamburguesa {display: none;}
+.nav-menu-mobile {display: none;}
+
+.logo,
+.burger-icon img{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+.nav-menu-mobile{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+}
+.nav-menu-mobile div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #0000FF;
+    cursor: pointer;
+    margin: 0px;
+}
+
+nav.mobile-menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* nav.mobile-menu > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    background-color: palevioletred;
+    border: 1px solid yellowgreen;
+} */
+
+#hamburguesa:checked ~ .nav-menu-mobile {
+    display: block;
+    width: 100%;
+    transition: width 0.3s ease-out;
+}
+.nav-menu-mobile div:hover {
+    background-color: #2828ff;
+    color:  #00F3BB;
+    text-decoration:line-through;
+}
+
+.nav-menu-mobile div a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px;
+    width: 100%;
+}
+.nav-menu-mobile div a:hover{
+    text-decoration: none;
+    color: #00F0B8;
+}
+
+/** DESKTOP **/
+@media screen and (min-width: 680px) {
+    /* body{background-color: goldenrod;} */
+    .desktop-menu{display: flex;}
+    nav.mobile-menu{display: none;}
+
+    header{
+        padding: 30px 20px;
+    }
+
+    nav,
+    .desktop-menu ul li{
+        display: flex;
+        justify-content: space-between;
+    }
+    .desktop-menu ul li a{
+        text-decoration: none;
+        color: #060A24;
+    }
+    .desktop-menu ul li a:hover{
+        color:  #00F3BB;
+        text-decoration:line-through;
+    }
+    .desktop-menu ul li a:active{
+        color:  rgba(6,10,36,0.56);
+        text-decoration:line-through;
+    }
+
+    .desktop-menu li {
+        list-style-type: none;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 0 20px;
+        text-transform: uppercase;
+    }
+    .desktop-menu ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+    header nav.desktop-menu div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+
     h1{font-size: 64px;}
     button{
         width: 226px;
@@ -285,8 +400,7 @@ footer .barra .redes a{
         justify-content: space-between;
         padding: 16px;
     }
-    header,
-    nav,
+    section.header,
     .nosotros,
     .temas,
     .novedades,
@@ -302,28 +416,3 @@ footer .barra .redes a{
     }
 
 }
-/* 
-@media screen and (min-width: 680px) {
-    body{background-color:darkorange}
-} 
-
-@media only screen and (min-width: 599px) and (max-width: 700px) {
-    #homero-2 {
-      visibility: visible;
-    }
-  }
-  @media only screen and (min-width: 499px) and (max-width: 600px) {
-    #homero-3 {
-      visibility: visible;
-    }
-  }
-  @media only screen and (min-width: 399px) and (max-width: 500px) {
-    #homero-4 {
-      visibility: visible;
-    }
-  }
-  @media only screen and (min-width: 1px) and (max-width: 400px) {
-    #homero-5 {
-      visibility: visible;
-    }
-  } */

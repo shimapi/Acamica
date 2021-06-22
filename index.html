@@ -12,31 +12,57 @@
       src="https://kit.fontawesome.com/4b3786d927.js"
       crossorigin="anonymous"
     ></script>
-    <title>4.Mobile First</title>
+    <title>4.Mobile First Shim</title>
 </head>
-<body>
-    <nav class="mobile">
-        <div class="logo">
-            <a href="#"><img src="./assets/logo.svg" alt="Logo Podcasts"></a></div>
-        <div class="burger-menu">
-            <img src="./assets/burger.svg" alt="Menú">
-        </div>
-    </nav>
+<body> 
     <header>
+        <nav class="desktop-menu"> 
+            <div class="logo">
+                <a href="#"><img src="./assets/logo.svg" alt="Logo Podcasts"></a>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#episodios">Episodios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#entrevistas">Entrevistas</a></li>
+                    <li><a href="#topicos">Tópicos</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="mobile-menu">
+            <div class="logo">
+                <a href="#"><img src="./assets/logo.svg" alt="Logo Podcasts"></a>
+            </div>
+            <div class="links">
+                <input type="checkbox" id="hamburguesa" />
+                <label for="hamburguesa" class="burger-icon">
+                    <img src="./assets/burger.svg" alt="Menú">
+                </label>
+                <div class="nav-menu-mobile">
+                    <div><a href="#episodios">Episodios</a></div>
+                    <div><a href="#nosotros">Nosotros</a></div>
+                    <div><a href="#entrevistas">Entrevistas</a></div>
+                    <div><a href="#topicos">Tópicos</a></div>
+                </div>
+            </div>
+        </nav>
+    </header>  
+    <section class="header">
          <h1 data-end=".">Hello <span class="tachado">world</span> pale blue dot</h1>
         <p>Un podcast que explora el mundo de la programación. Nuevos episodios, todos los jueves cada 15 días</p>
         <button name="conoce" onclick="location.href='#nosotros'">Conocé más</button>
-    </header>
+    </section>
     <main>
         <a name="episodios"></a>
         <section class="episodios">
             <div class="bg-blue"></div>
             <h2 class="white">Episodios</h2>
             <div>
-                <iframe src="https://open.spotify.com/embed/episode/2SVbyeh5XNyFXzW8I5UBVC" width="100%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                <iframe src="https://open.spotify.com/embed/episode/6hsx726cCgaCEBdmRM8BcL" width="100%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                <iframe src="https://open.spotify.com/embed/episode/5e1bnrOR9siYGa6W23YNog" width="100%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>                
-                <iframe src="https://open.spotify.com/embed/episode/1Y2nvQjHafXofOu45g8Yu6" width="100%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <iframe src="https://open.spotify.com/embed/episode/2SVbyeh5XNyFXzW8I5UBVC" width="100%" frameBorder="0" allowtransparency="true" scrolling="no" allow="encrypted-media"></iframe>
+                <iframe src="https://open.spotify.com/embed/episode/6hsx726cCgaCEBdmRM8BcL" width="100%" frameBorder="0" allowtransparency="true" scrolling="no" allow="encrypted-media"></iframe>
+                <iframe src="https://open.spotify.com/embed/episode/5e1bnrOR9siYGa6W23YNog" width="100%" frameBorder="0" allowtransparency="true" scrolling="no" allow="encrypted-media"></iframe>                
+                <iframe src="https://open.spotify.com/embed/episode/1Y2nvQjHafXofOu45g8Yu6" width="100%" frameBorder="0" allowtransparency="true" scrolling="no" allow="encrypted-media"></iframe>
             </div>
         </section>
 
@@ -53,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <a name="galeria"></a>
+        <a name="entrevistas"></a>
         <div class="galeria">
             <h2>Invitadas/os estelares</h2> 
             <div>
