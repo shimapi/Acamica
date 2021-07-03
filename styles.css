@@ -18,26 +18,8 @@ body{
 .column{flex-direction: column;}
 
 
-/** button **/
 
-button{
-    background-color: #00F3BB;
-    width: 100%;
-    height: 56px;
-    font-family: 'IBM Plex Mono';
-    font-size: 18px;
-    color: #060A24;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin: 30px 0;
-    border: none;
-}
-button:hover{
-    /*background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);*/
-    color:#fff;
-    background: linear-gradient(65deg, #00F0B8, #0000FE);
-}
-
+/*+ Main items **/
 
 h1,h2{
     font-size: 36px;
@@ -48,7 +30,7 @@ h1,h2,h3{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;
 }
-section.header h1::after { /* punto azul*/
+section.header h1::after { /*punto azul*/
     content: attr(data-end) ;
     color: #0000FF ;
 }
@@ -69,47 +51,27 @@ main .episodios{
     margin-top: 30px;
 }
 main .episodios .bg-blue{
-      /* Absolute position */
-      left: 0px;
-      position: absolute;
-      top: -30px;
-      padding-top: 50px;
-  
-      /* Take full size */
-      height: 130%;
-      width: 100%;
-  
-      /* Create diagonal sides */
-      transform: skewY(-7deg);
-  
-      /* Background color */
-      background-color: #0000FF;
-  
-      /* Displayed under the main content */
-      z-index: -1;
+    left: 0px;
+    position: absolute;
+    top: -30px;
+    padding-top: 50px;
+    height: 130%;
+    width: 100%;
+    transform: skewY(-7deg);
+    background-color: #0000FF;
+    z-index: -1;
 }
 .novedades .bg-blue{
-
-          /* Absolute position */
-          left: 0px;
-          position: absolute;
-          top: 100px;
-          padding-top: 50px;
-      
-          /* Take full size */
-          height: 140%;
-          width: 100%;
-      
-          /* Create diagonal sides */
-          transform: skewY(-7deg);
-      
-          /* Background color */
-          background-color: #0000FF;
-      
-          /* Displayed under the main content */
-          z-index: -1;
+    left: 0px;
+    position: absolute;
+    top: 100px;
+    padding-top: 50px;
+    height: 140%;
+    width: 100%;
+    transform: skewY(-7deg);
+    background-color: #0000FF;
+    z-index: -1;
 }
-
 .nosotros > div{
     display: flex;
     flex-direction: column;
@@ -135,12 +97,9 @@ main .episodios .bg-blue{
     text-align: center;
     align-items: center;
 }
-
-
 .novedades .big{
     padding-top: 100px;
 }
-
 section.header p{
     margin-top: 25px;
 }
@@ -205,55 +164,31 @@ footer .barra .redes{
 footer .barra .redes a{
     font-size: 20px;
     color: #060A24;
-
 }
 
-/* 
-@media screen and (min-width: 680px) {
-    body{background-color:darkorange}
-} 
-
-@media only screen and (min-width: 599px) and (max-width: 700px) {
-    #homero-2 {
-      visibility: visible;
-    }
-  }
-  @media only screen and (min-width: 499px) and (max-width: 600px) {
-    #homero-3 {
-      visibility: visible;
-    }
-  }
-  @media only screen and (min-width: 399px) and (max-width: 500px) {
-    #homero-4 {
-      visibility: visible;
-    }
-  }
-  @media only screen and (min-width: 1px) and (max-width: 400px) {
-    #homero-5 {
-      visibility: visible;
-    }
-  } */
-
-
-
-
-
-
-
-/* Mobile menu */
+/** Mobile menu **/
 .desktop-menu{display: none;}
 #hamburguesa {display: none;}
 .nav-menu-mobile {display: none;}
 
 .logo,
-.burger-icon img{
+.burger-icon img,
+.burger-icon .change-icon{
     width: 20px;
     height: 20px;
     margin: 10px;
 }
+.burger-icon .change-icon{
+    background: no-repeat center url("./assets/burger.svg");
+    background-size: 20px 20px;
+}
+#hamburguesa:checked ~ .burger-icon .change-icon{
+    background: no-repeat center url("./assets/close.svg");
+    background-size: 30px 30px;
+}
 .nav-menu-mobile{
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 0px;
 }
 .nav-menu-mobile div {
@@ -264,33 +199,19 @@ footer .barra .redes a{
     cursor: pointer;
     margin: 0px;
 }
-
 nav.mobile-menu{
     display: flex;
     justify-content: space-between;
 }
-
-/* nav.mobile-menu > div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    background-color: palevioletred;
-    border: 1px solid yellowgreen;
-} */
-
 #hamburguesa:checked ~ .nav-menu-mobile {
     display: block;
     width: 100%;
     transition: width 0.3s ease-out;
 }
 .nav-menu-mobile div:hover {
-    background-color: #2828ff;
     color:  #00F3BB;
     text-decoration:line-through;
 }
-
 .nav-menu-mobile div a{
     color: #fff;
     text-transform: uppercase;
@@ -303,16 +224,62 @@ nav.mobile-menu{
     color: #00F0B8;
 }
 
+/** button & animations **/
+
+button{
+    background-color: #00F3BB;
+    width: 100%;
+    height: 56px;
+    font-family: 'IBM Plex Mono';
+    font-size: 18px;
+    color: #060A24;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 30px 0;
+    border: none;
+}
+button:hover{
+    color:#fff;
+    background-image: linear-gradient(to right, #00F0B8 40%, #0000FE 100%);
+    background-size: 200% 200%;
+    animation: rainbow 2s ease-in-out infinite;
+    background-position: center right;
+}
+
+.nav-menu-mobile div:hover {
+    background-image: linear-gradient(to right, #0000FE 40%, #00F0B8 100%);
+    background-size: 200% 200%;
+    animation: rainbow 2s ease-in-out 2;
+    background-position: center right;
+}
+
+footer .barra .redes a i{
+    background: linear-gradient(65deg, #00F0B8, #0000FE);
+    background-size: 200% 200%;
+    animation: rainbow 2s ease-in-out infinite;
+    color:rgba(0,0,0,1);
+    transition: color .2s ease-in-out;
+    background-clip: text;
+    -webkit-background-clip:text;
+}
+footer .barra .redes a i:hover{
+    color:rgba(0,0,0,0);
+}
+@keyframes rainbow { 
+    0%{background-position:left}
+    50%{background-position:right}
+    100%{background-position:left}
+}
+
 /** DESKTOP **/
 @media screen and (min-width: 680px) {
-    /* body{background-color: goldenrod;} */
+
     .desktop-menu{display: flex;}
     nav.mobile-menu{display: none;}
 
     header{
         padding: 30px 20px;
     }
-
     nav,
     .desktop-menu ul li{
         display: flex;
@@ -330,7 +297,6 @@ nav.mobile-menu{
         color:  rgba(6,10,36,0.56);
         text-decoration:line-through;
     }
-
     .desktop-menu li {
         list-style-type: none;
         cursor: pointer;
@@ -347,9 +313,6 @@ nav.mobile-menu{
         flex-direction: row;
         justify-content: space-between;
     }
-
-
-
     h1{font-size: 64px;}
     button{
         width: 226px;
@@ -366,7 +329,6 @@ nav.mobile-menu{
         display: flex;
         flex-direction: row;
     }
-    
     .temas > div,
     .galeria div{
         display: flex;
@@ -378,13 +340,11 @@ nav.mobile-menu{
         text-align: center;
         min-width: 200px;
     }
-
     .galeria div img{
         width: 33.3%;
         margin: 0;
         padding: 0;
     }
-    
     .novedades .big h2{
         width: 80%;
         margin-top: 60px;
@@ -414,5 +374,4 @@ nav.mobile-menu{
     main .episodios h2{
         padding: 0 50px;
     }
-
 }
